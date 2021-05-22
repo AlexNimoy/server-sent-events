@@ -1,0 +1,8 @@
+services:
+  app:
+    image: node:14.17.0-buster
+    command: node /usr/app/server.js
+    volumes:
+      - .:/usr/app/
+    ports:
+      - "8086:8086"

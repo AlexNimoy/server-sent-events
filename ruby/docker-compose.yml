@@ -1,0 +1,8 @@
+services:
+  app:
+    build: .
+    command: rackup server.ru -p 8086 -o 0.0.0.0
+    volumes:
+      - .:/app/
+    ports:
+      - "8086:8086"

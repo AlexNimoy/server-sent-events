@@ -1,0 +1,8 @@
+services:
+  app:
+    image: php:7.4-cli
+    command: bash -c "cd /usr/app/ && php -S 0.0.0.0:8086"
+    volumes:
+      - .:/usr/app
+    ports:
+      - "8086:8086"

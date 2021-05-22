@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Server-Sent Events (SSE)</title>
+</head>
+<body>
+<h1>Server-Sent Events (SSE)</h1>
+<div id="data"></div>
+
+<script>
+  const eventSource = new EventSource("http://localhost:8086/stream");
+  console.log("Start stream!");
+  const dataElem = document.getElementById("data");
+  eventSource.onmessage = (message) => {
+    dataElem.innerText = `id: ${message.lastEventId} data: ${message.data}`;
+  }
+</script>
+</body>
+</html>
